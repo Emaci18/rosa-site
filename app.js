@@ -87,11 +87,11 @@ function renderHomeSection() {
   const container = document.createElement('div');
   container.className = 'container';
   container.innerHTML = `
-    <img src="./photos/download.jpg" alt="Profile Photo" class="profile-image" />
+    <img src="./photos/rosa.jpeg" alt="Profile Photo" class="profile-image" />
     <h1>Rosa D manzo</h1>
-    <h2>UX Designer</h2>
+    <h2>PHD</h2>
     <p class="summary">
-      Designing intuitive and inclusive digital experiences that connect people and products.
+      Transforming health education and research to serve underrepresented communities — one student, one project, and one partnership at a time.
     </p>
     <a href="#portfolio" class="cta-button" id="view-work-btn">View My Work</a>
   `;
@@ -125,13 +125,12 @@ function renderAboutSection() {
   section.innerHTML = `
     <h2>About Me</h2>
     <p class="professional-journey">
-      I am a dedicated professor at [University Name], specializing in [field]. Over the past 15 years, I have committed myself to advancing research in [specific area] while inspiring students to pursue knowledge passionately.
-    </p>
+    I am an Assistant Teaching Professor of Medical Education at the University of California, Merced, with over 15 years of experience in higher education, interdisciplinary research, and program leadership. My work focuses on advancing equity in health and education through community-based participatory research, curriculum design, and mentorship.  </p>
     <p class="values-mission">
-      My mission is to foster inclusive learning environments that celebrate cultural heritage and diversity. I believe that education is a powerful tool to bridge communities and empower future generations.
+        My mission is to expand access to culturally responsive education and healthcare by building inclusive programs that center the voices and experiences of underserved communities. I collaborate with students, educators, and community leaders to drive meaningful systems change in California’s Central Valley and beyond.
     </p>
     <p class="personal-interests">
-      Outside of academia, I enjoy exploring traditional Chinese art, hiking local trails, and sharing stories of my rich Chincao heritage with family and friends.
+      Outside of my academic work, I’m passionate about fostering pathways for first-generation students, strengthening community partnerships, and honoring my cultural roots through storytelling, local engagement, and family traditions.
     </p>
 
     <!-- Optional images gallery -->
@@ -173,15 +172,27 @@ function renderResumeSection() {
       <h3>Work Experience</h3>
       <ul>
         <li>
-          <strong>Professor of Computer Science</strong>, [University Name] (2010–Present)<br />
-          - Lead research in AI and machine learning.<br />
-          - Supervised 30+ graduate theses.<br />
-          - Developed new interdisciplinary courses.
+          <strong>Assistant Teaching Professor of Medical Education</strong>, University of California, Merced (2024–Present)<br />
+          - Lead curriculum development and instruction for medical and pre-health students.<br />
+          - Facilitate interdisciplinary research initiatives.<br />
+          - Promote equity-focused, community-engaged pedagogy.
         </li>
         <li>
-          <strong>Research Fellow</strong>, [Research Institute] (2005–2010)<br />
-          - Published 15+ papers in top-tier journals.<br />
-          - Collaborated on international projects.
+          <strong>Project Scientist</strong>, University of California, Merced (2017–2024)<br />
+          - Secured ~$800,000 in research funding.<br />
+          - Mentored students in public health and medical research.<br />
+          - Built research collaborations with regional healthcare providers.
+        </li>
+        <li>
+          <strong>Associate Director of Medical Education</strong>, UC Merced (2018–2021)<br />
+          - Led San Joaquin Valley PRIME curriculum deployment.<br />
+          - Developed health career pipelines for high school and undergrad students.<br />
+          - Established new courses and partnerships with regional hospitals.
+        </li>
+        <li>
+          <strong>Postdoctoral Fellow</strong>, UC Davis (2014–2017)<br />
+          - Led community-based interventions (e.g., Niños Sanos, Familia Sana; DESPIERTA).<br />
+          - Published and presented research nationally and internationally.
         </li>
       </ul>
     </section>
@@ -189,29 +200,28 @@ function renderResumeSection() {
     <section class="resume-subsection education">
       <h3>Education</h3>
       <ul>
-        <li><strong>Ph.D. in Computer Science</strong>, [University], 2005</li>
-        <li><strong>M.Sc. in Computer Science</strong>, [University], 2001</li>
-        <li><strong>B.Sc. in Mathematics</strong>, [University], 1999</li>
+        <li><strong>Ph.D. in Education</strong>, University of California, Davis</li>
+        <li><strong>B.A. in [Your Undergraduate Field]</strong>, University of California, Los Angeles</li>
       </ul>
     </section>
 
     <section class="resume-subsection skills">
       <h3>Skills</h3>
       <ul>
-        <li>Machine Learning & AI</li>
-        <li>Data Analysis & Visualization</li>
-        <li>Python, R, Java</li>
-        <li>Curriculum Development</li>
-        <li>Public Speaking & Academic Writing</li>
+        <li>Community-Based Participatory Research (CBPR)</li>
+        <li>Curriculum Development & Evaluation</li>
+        <li>Program Leadership & Grant Management</li>
+        <li>Mentorship & Student Development</li>
+        <li>Qualitative & Quantitative Research Methods</li>
       </ul>
     </section>
 
     <section class="resume-subsection certifications">
       <h3>Certifications & Awards</h3>
       <ul>
-        <li>Best Research Paper Award, XYZ Conference, 2022</li>
-        <li>Certified Data Scientist, ABC Institute, 2018</li>
-        <li>Excellence in Teaching Award, [University], 2015</li>
+        <li>Jimmy and Rosalynn Carter Partnership Foundation CASE Grant Recipient</li>
+        <li>Excellence in Program Development, UC Merced</li>
+        <li>Faculty Leadership in Community Health Education, UC Davis</li>
       </ul>
     </section>
 
@@ -227,25 +237,25 @@ function renderResumeSection() {
 
 const projects = [
   {
-    name: 'Smart Campus App',
-    description: `Led the design and development of a mobile app to enhance campus navigation and services. Focused on UX improvements to boost student engagement.`,
-    tech: ['React Native', 'Firebase', 'Google Maps API'],
-    role: 'Lead UX Designer & Developer',
+    name: 'San Joaquin Valley PRIME Curriculum Deployment',
+    description: `Implemented and oversaw the San Joaquin Valley PRIME curriculum, a medical education track designed to train physicians committed to serving underserved rural communities. Integrated community-based learning, leadership seminars, and clinical engagement.`,
+    tech: ['UCSF', 'UCSF-Fresno'],
+    role: 'Curriculum Co-Lead / Collaborator',
     image: './photos/photo1.jpg', // optional screenshot
     link: 'https://smartcampus.example.com', // optional live demo
   },
   {
-    name: 'AI Research Dashboard',
-    description: `Created an interactive dashboard to visualize AI model performance and research metrics, enabling easier collaboration among teams.`,
-    tech: ['Python', 'Dash', 'Plotly'],
-    role: 'Full Stack Developer & Data Analyst',
+    name: 'Promotoras de Salud Research Training',
+    description: `Designed and implemented a curriculum to train promotoras (community health workers) as research collaborators. Empowered local leaders with research skills to better advocate for and represent community health needs.`,
+    tech: ['Camarena Health'],
+    role: 'Program Developer / Principal Investigator',
     image: './photos/photo2.jpg',
-    link: null,
+    link: 'https://smartcampus.example.com', 
   },
   {
-    name: 'Cultural Heritage Website',
-    description: `Designed and implemented a site to share and celebrate Chincao heritage through storytelling and multimedia.`,
-    tech: ['HTML', 'CSS', 'JavaScript', 'WordPress'],
+    name: 'Health Career Pipeline Program',
+    description: `Developed outreach programs connecting rural high school students with health professions education. Designed enrichment and mentorship components to foster long-term career engagement in health sciences.`,
+    tech: ['UC Merced', 'Local High Schools'],
     role: 'Project Manager & Frontend Developer',
     image: './photos/photo3.jpg',
     link: 'https://chincaoculture.org',
@@ -276,7 +286,7 @@ function renderPortfolioSection() {
       <h3>${project.name}</h3>
       <p class="project-role"><strong>Role:</strong> ${project.role}</p>
       <p class="project-description">${project.description}</p>
-      <p class="project-tech"><strong>Technologies:</strong> ${project.tech.join(', ')}</p>
+      <p class="project-tech"><strong>Partners:</strong> ${project.tech.join(', ')}</p>
       ${project.image ? `<img src="${project.image}" alt="${project.name} screenshot" class="project-image" />` : ''}
       ${project.link ? `<p><a href="${project.link}" target="_blank" rel="noopener noreferrer">View Project</a></p>` : ''}
     `;
@@ -302,7 +312,7 @@ function renderContactSection() {
       I'd love to connect! Whether you have a question, want to collaborate, or just want to say hello — feel free to reach out.
     </p>
 
-    <form class="contact-form" action="mailto:your.email@example.com" method="POST" enctype="text/plain">
+    <form class="contact-form" action="mailto:em514405@example.com" method="POST" enctype="text/plain">
       <label for="name">Name</label>
       <input type="text" id="name" name="name" required />
 
@@ -321,7 +331,7 @@ function renderContactSection() {
     </div>
 
     <div class="social-links">
-      <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/rosamanzo/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
       <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener">Twitter</a>
     </div>
