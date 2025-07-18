@@ -1,87 +1,3 @@
-// Data for menu items and their render functions
-const menuItems = [
-  {
-    id: 'home',
-    label: 'Home',
-    tabIndex: 1,
-    render: renderHomeSection,
-  },
-  {
-    id: 'about',
-    label: 'About Me',
-    tabIndex: 2,
-    render: renderAboutSection,
-  },
-  // Placeholder for future sections
-  {
-    id: 'resume',
-    label: 'Resume',
-    tabIndex: 3,
-    render: () => renderResumeSection('Resume'),
-  },
-  {
-    id: 'portfolio',
-    label: 'Portfolio',
-    tabIndex: 4,
-    render: () => renderPortfolioSection('Portfolio'),
-  },
-  {
-    id: 'contact',
-    label: 'Contact',
-    tabIndex: 5,
-    render: () => renderContactSection('Contact'),
-  },
-];
-
-// Cache DOM references
-const app = document.getElementById('app');
-
-// Create nav and append to body
-const nav = document.createElement('nav');
-const ul = document.createElement('ul');
-
-menuItems.forEach(({ id, label, tabIndex }) => {
-  const li = document.createElement('li');
-  const a = document.createElement('a');
-  a.href = `#${id}`;
-  a.textContent = label;
-  a.tabIndex = tabIndex;
-  li.appendChild(a);
-  ul.appendChild(li);
-});
-
-nav.appendChild(ul);
-document.body.prepend(nav);
-
-// Render home by default on page load
-menuItems[0].render();
-
-// Handle nav clicks via event delegation
-nav.addEventListener('click', (event) => {
-  if (event.target.tagName !== 'A') return;
-
-  event.preventDefault();
-
-  const targetId = event.target.getAttribute('href').substring(1);
-
-  // Clear current content
-  clearAppContent();
-
-  // Find the menu item and render its section
-  const menuItem = menuItems.find((item) => item.id === targetId);
-
-  if (menuItem && typeof menuItem.render === 'function') {
-    menuItem.render();
-  }
-});
-
-// Clears the content inside #app container
-function clearAppContent() {
-  while (app.firstChild) {
-    app.removeChild(app.firstChild);
-  }
-}
-
 // Home section renderer
 function renderHomeSection() {
   const container = document.createElement('div');
@@ -355,3 +271,78 @@ function renderPlaceholder(name) {
 
 
 
+
+
+function clearAppContent() {
+  app.innerHTML = '';
+}
+
+// Menu items config
+const menuItems = [
+  { id: 'home', label: 'Home', tabIndex: 1, render: renderHomeSection },
+  { id: 'about', label: 'About Me', tabIndex: 2, render: renderAboutSection },
+  { id: 'resume', label: 'Resume', tabIndex: 3, render: renderResumeSection },
+  { id: 'portfolio', label: 'Portfolio', tabIndex: 4, render: renderPortfolioSection },
+  { id: 'contact', label: 'Contact', tabIndex: 5, render: renderContactSection }
+];
+
+// Cache app container
+const app = document.getElementById('app');
+
+// Create nav
+const nav = document.createElement('nav');
+nav.id = 'navbar';
+
+const navToggle = document.createElement('button');
+navToggle.id = 'navToggle';
+navToggle.setAttribute('aria-label', 'Toggle navigation');
+navToggle.setAttribute('aria-expanded', 'false');
+navToggle.textContent = '☰';
+
+const ul = document.createElement('ul');
+ul.id = 'navMenu';
+
+menuItems.forEach(({ id, label, tabIndex }) => {
+  const li = document.createElement('li');
+  const a = document.createElement('a');
+  a.href = `#${id}`;
+  a.textContent = label;
+  a.tabIndex = tabIndex;
+  li.appendChild(a);
+  ul.appendChild(li);
+});
+
+nav.appendChild(navToggle);
+nav.appendChild(ul);
+document.body.prepend(nav);
+
+// Toggle nav menu visibility on mobile
+navToggle.addEventListener('click', () => {
+  const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+  navToggle.setAttribute('aria-expanded', !expanded);
+  ul.classList.toggle('show');
+});
+
+// Collapse menu on nav link click (mobile only)
+ul.addEventListener('click', () => {
+  if (window.innerWidth <= 600) {
+    ul.classList.remove('show');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }
+});
+
+// Render content sections on nav click
+nav.addEventListener('click', (event) => {
+  if (event.target.tagName !== 'A') return;
+
+  event.preventDefault();
+  const targetId = event.target.getAttribute('href').substring(1);
+
+  clearAppContent();
+
+  const menuItem = menuItems.find((item) => item.id === targetId);
+  if (menuItem && typeof menuItem.render === 'function') {
+    menuItem.render();
+  }
+});
+renderHomeSection()
